@@ -2,130 +2,134 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quản lí đơn hàng</title>
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="./style.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Chi tiết đơn hàng</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="./style.css" rel="stylesheet"/>
 </head>
 
 <body>
-  <div class="wrapper rounded">
-    <nav class="navbar navbar-expand-lg navbar-dark dark d-lg-flex align-items-lg-start"> <a class="navbar-brand"
-        href="#">LONGEE <p class="text-muted pl-1">Quản lý đơn hàng của Longee Shop</p> </a> <button
-        class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-        aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-lg-auto">
-          <li class="nav-item">
-            <div class="dropdown show">
-              <a class="btn nav-link dropdown-toggle" role="button" id="dropdownNotification" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false" href="#"><span class="fa fa-bell-o font-weight-bold"></span>
-                <span class="notify">Notifications</span> </a>
-              <div class="dropdown-menu" aria-labelledby="dropdownNotification">
-                <a class="dropdown-item d-flex flex-column" href="#">
-                  <span>Air force 1 all white vừa hết hàng</span>
-                  <small class="text-muted">15/10/2021 15:00</small>
-                </a>
-                <a class="dropdown-item d-flex flex-column" href="#">
-                  <span>Lô Jordan 1 mới đã về kho</span>
-                  <small class="text-muted">15/10/2021 15:00</small>
-                </a>
-                <a class="dropdown-item d-flex flex-column" href="#">
-                  <span>Nike vừa gửi một hóa đơn</span>
-                  <small class="text-muted">15/10/2021 15:00</small>
-                </a>
-              </div>
-            </div>
-          </li>
-          <li class="nav-item "> <a href="#"><span class="fa fa-search"></span></a> <input type="search" class="dark"
-              placeholder="Tìm kiếm"> </li>
-        </ul>
-      </div>
+<div class="wrapper rounded">
+    <nav class="navbar navbar-expand-lg navbar-dark dark d-lg-flex align-items-lg-start"><a class="navbar-brand"
+                                                                                            href="#">LONGEE <p
+            class="text-muted pl-1">Quản lý đơn hàng của Longee Shop</p></a>
+        <button
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+                data-target="#navbarNav"
+                data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-lg-auto">
+                <li class="nav-item">
+                    <div class="dropdown show">
+                        <a aria-expanded="false" aria-haspopup="true" class="btn nav-link dropdown-toggle"
+                           data-toggle="dropdown"
+                           href="#" id="dropdownNotification" role="button"><span
+                                class="fa fa-bell-o font-weight-bold"></span>
+                            <span class="notify">Notifications</span> </a>
+                        <div aria-labelledby="dropdownNotification" class="dropdown-menu">
+                            <a class="dropdown-item d-flex flex-column" href="#">
+                                <span>Air force 1 all white vừa hết hàng</span>
+                                <small class="text-muted">15/10/2021 15:00</small>
+                            </a>
+                            <a class="dropdown-item d-flex flex-column" href="#">
+                                <span>Lô Jordan 1 mới đã về kho</span>
+                                <small class="text-muted">15/10/2021 15:00</small>
+                            </a>
+                            <a class="dropdown-item d-flex flex-column" href="#">
+                                <span>Nike vừa gửi một hóa đơn</span>
+                                <small class="text-muted">15/10/2021 15:00</small>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item ">
+                    <form action="search.html" method="GET">
+                        <a href="#"><span class="fa fa-search"></span></a> <input class="dark" name="name"
+                                                                                  placeholder="Tìm kiếm" type="search">
+                    </form>
+                </li>
+            </ul>
+        </div>
     </nav>
     <div class="row mt-2 pt-2">
-      <div class="col-md-6" id="income">
-        <div class="d-flex justify-content-start align-items-center">
-          <p class="fa fa-long-arrow-down"></p>
-          <p class="text mx-3">Thu nhập</p>
-          <p class="text-white ml-4 money">150.000.000 VND</p>
+        <div class="col-md-6" id="income">
+            <div class="d-flex justify-content-start align-items-center">
+                <p class="fa fa-long-arrow-down"></p>
+                <p class="text mx-3">Thu nhập</p>
+                <p class="text-white ml-4 money">150.000.000 VND</p>
+            </div>
         </div>
-      </div>
-      <div class="col-md-6">
-        <div class="d-flex justify-content-md-end align-items-center">
-          <div class="fa fa-long-arrow-up"></div>
-          <div class="text mx-3">Chi trả</div>
-          <div class="text-white ml-4 money">50.000.000</div>
+        <div class="col-md-6">
+            <div class="d-flex justify-content-md-end align-items-center">
+                <div class="fa fa-long-arrow-up"></div>
+                <div class="text mx-3">Chi trả</div>
+                <div class="text-white ml-4 money">50.000.000</div>
+            </div>
         </div>
-      </div>
     </div>
     <div class="row mt-5">
-      <h1 class="text-white text-center w-100 mt-2">Chi tiết đơn hàng</h1>
-      <div class="col-12 col-lg-6 mt-3">
-        <div class="d-flex align-items-center justify-content-between pr-lg-5">
-          <p class="text-muted">Tên sản phẩm</p>
-          <p class="text-white">Air force 1 All White</p>
+        <h1 class="text-white text-center w-100 mt-2">Chi tiết đơn hàng</h1>
+        <div class="col-12 col-lg-6 mt-3">
+            <div class="d-flex align-items-center justify-content-between pr-lg-5">
+                <p class="text-muted">Tên sản phẩm</p>
+                <p class="text-white">Air force 1 All White</p>
+            </div>
+            <div class="d-flex align-items-center justify-content-between pr-lg-5">
+                <p class="text-muted">Hình thức thanh toán</p>
+                <p class="text-white">Thẻ Visa</p>
+            </div>
+            <div class="d-flex align-items-center justify-content-between pr-lg-5">
+                <p class="text-muted">Trạng thái</p>
+                <p class="text-white">Chờ xác nhận</p>
+            </div>
+            <div class="d-flex align-items-center justify-content-between pr-lg-5">
+                <p class="text-muted">Số lượng</p>
+                <p class="text-white">1</p>
+            </div>
+            <div class="d-flex align-items-center justify-content-between pr-lg-5">
+                <p class="text-muted">Phân loại</p>
+                <p class="text-white">Khách mua</p>
+            </div>
+            <div class="d-flex align-items-center justify-content-between pr-lg-5">
+                <p class="text-muted">Tổng tiền</p>
+                <p class="text-white">1.500.000</p>
+            </div>
         </div>
-        <div class="d-flex align-items-center justify-content-between pr-lg-5">
-          <p class="text-muted">Hình thức thanh toán</p>
-          <p class="text-white">Thẻ Visa</p>
+        <div class="col-12 col-lg-6 mt-3">
+            <div class="d-flex align-items-center justify-content-between pr-lg-5">
+                <p class="text-muted">Tên khách hàng</p>
+                <p class="text-white">Đỗ Thanh Long</p>
+            </div>
+            <div class="d-flex align-items-center justify-content-between pr-lg-5">
+                <p class="text-muted">Địa chỉ</p>
+                <p class="text-white">Hà Nội</p>
+            </div>
+            <div class="d-flex align-items-center justify-content-between pr-lg-5">
+                <p class="text-muted">Số điện thoại</p>
+                <p class="text-white">0869696969</p>
+            </div>
+            <div class="d-flex align-items-center justify-content-between pr-lg-5">
+                <p class="text-muted">Email</p>
+                <p class="text-white">thanhlongtld@gmail.com</p>
+            </div>
+            <div class="d-flex align-items-center justify-content-between pr-lg-5">
+                <p class="text-muted">Lưu ý của khách</p>
+                <p class="text-white">Ship trong giờ hành chính</p>
+            </div>
+            <div class="d-flex align-items-center justify-content-between pr-lg-5">
+                <p class="text-muted">Thời gian mua</p>
+                <p class="text-white">21/10/2021 15:00</p>
+            </div>
         </div>
-        <div class="d-flex align-items-center justify-content-between pr-lg-5">
-          <p class="text-muted">Trạng thái</p>
-          <p class="text-white">Chờ xác nhận</p>
-        </div>
-        <div class="d-flex align-items-center justify-content-between pr-lg-5">
-          <p class="text-muted">Số lượng</p>
-          <p class="text-white">1</p>
-        </div>
-        <div class="d-flex align-items-center justify-content-between pr-lg-5">
-          <p class="text-muted">Phân loại</p>
-          <p class="text-white">Khách mua</p>
-        </div>
-        <div class="d-flex align-items-center justify-content-between pr-lg-5">
-          <p class="text-muted">Tổng tiền</p>
-          <p class="text-white">1.500.000</p>
-        </div>
-      </div>
-      <div class="col-12 col-lg-6 mt-3">
-        <div class="d-flex align-items-center justify-content-between pr-lg-5">
-          <p class="text-muted">Tên khách hàng</p>
-          <p class="text-white">Đỗ Thanh Long</p>
-        </div>
-        <div class="d-flex align-items-center justify-content-between pr-lg-5">
-          <p class="text-muted">Địa chỉ</p>
-          <p class="text-white">Hà Nội</p>
-        </div>
-        <div class="d-flex align-items-center justify-content-between pr-lg-5">
-          <p class="text-muted">Số điện thoại</p>
-          <p class="text-white">0869696969</p>
-        </div>
-        <div class="d-flex align-items-center justify-content-between pr-lg-5">
-          <p class="text-muted">Email</p>
-          <p class="text-white">thanhlongtld@gmail.com</p>
-        </div>
-        <div class="d-flex align-items-center justify-content-between pr-lg-5">
-          <p class="text-muted">Lưu ý của khách</p>
-          <p class="text-white">Ship trong giờ hành chính</p>
-        </div>
-        <div class="d-flex align-items-center justify-content-between pr-lg-5">
-          <p class="text-muted">Thời gian mua</p>
-          <p class="text-white">21/10/2021 15:00</p>
-        </div>
-      </div>
-      <a class="btn btn-primary m-auto text-center mt-3" href="./index.html">Quay lại</a>
+        <a class="btn btn-primary m-auto text-center mt-3" href="./index.html">Quay lại</a>
 
     </div>
 
-  </div>
-  <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
-  <script src="./script.js">
-  </script>
+</div>
+
 </body>
 
 </html>
