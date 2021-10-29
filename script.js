@@ -106,6 +106,28 @@ $(document).ready(function () {
     },
     pagingType: 'simple',
   });
+
+  allTransTable.on('click', 'tr', function () {
+    window.location.href = '/detail.html';
+  });
+  waitingConfirmTable.on('click', 'tr', function () {
+    window.location.href = '/detail.html';
+  });
+  waitingShipTable.on('click', 'tr', function () {
+    window.location.href = '/detail.html';
+  });
+  shippingTable.on('click', 'tr', function () {
+    window.location.href = '/detail.html';
+  });
+  successTable.on('click', 'tr', function () {
+    window.location.href = '/detail.html';
+  });
+  failedTable.on('click', 'tr', function () {
+    window.location.href = '/detail.html';
+  });
+  importTable.on('click', 'tr', function () {
+    window.location.href = '/detail.html';
+  });
 });
 
 const changeTab = (e, name) => {
